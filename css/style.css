@@ -1,0 +1,407 @@
+        /*paleta de colores con root, */
+        
+        :root {
+            --blanco: #ffffff;
+            --oscuro: #212121;
+            --primario: #FFC107;
+            --secundario: #0097A7;
+            --gris: #757575;
+            --grisClaro: #DFE9F3;
+        }
+        
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+            /*agregamos al ultimo ya que es para realizar un scroll*/
+            scroll-snap-type: y mandatory;
+        }
+        /*scroll de snap*/
+        
+        .servicios,
+        .navegacion-principal,
+        .formulario {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        body {
+            font-size: 16px;
+            /* 1 rem = 10 px*/
+            font-family: 'Krub', sans-serif;
+            background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+        }
+        /*.titulo { *eliminamos titulo para genenra h1,h2 y h3 y todos los elementos centrados
+    text-align: center;
+    /*font-size: 3.8rem;/* lo eliminamos y colocamos al h1*/
+        /*}*/
+        
+        .titulo span {
+            /*en este caso en ves de poner h1 utilizamos .titulo como clase*/
+            font-size: 2rem;
+        }
+        
+        .contenedor {
+            max-width: 120rem;
+            /*margin-top: 0;
+                margin-right: auto;
+                margin-bottom: 0;
+                margin-left: auto;*/
+            /* es lo mismo que margin*/
+            /*margin: 0 auto 0 auto;*/
+            /*podemos eliminar  incluso este y dejar solo lo de abajo*/
+            margin: 0 auto;
+        }
+        
+        .boton {
+            background-color: var(--secundario);
+            /* color contorno*/
+            color: var(--blanco);
+            /* color letra*/
+            padding: 1rem 3rem;
+            /* tamaño del contorno, 1 arriba 3 al costado, 1 abajo y 3 lado izquierdo*/
+            margin-top: 1rem;
+            /* ´para tener separacion del logo ubicacion*/
+            font-size: 2rem;
+            /* tamaño de la letra*/
+            text-decoration: none;
+            /* quitamos la linea de abajo del nav*/
+            text-transform: uppercase;
+            /* cambiar a mayuscula*/
+            font-weight: bold;
+            /* mas negrita*/
+            border-radius: .5rem;
+            /* le redondea el boton*/
+            width: 90%;
+            /* toma el tamaño completo de la hoja en caso de ser utilizado por un celular*/
+            text-align: center;
+            /* centramos la palabra*/
+            border: none;
+            /* sacamos el borde del boton enviar que lo tiene por default*/
+        }
+        
+        @media (min-width: 768px) {
+            .boton {
+                width: auto;
+            }
+        }
+        /* se agrego con el boton enviar, para que cuando pase este la manito presente*/
+        
+        .boton:hover {
+            cursor: pointer;
+        }
+        
+        .sombra {
+            -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+            -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+            box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+            background-color: var(--blanco);
+            /* agregamos color al cuadro*/
+            padding: 2rem;
+            /*agregamos separacion*/
+            border-radius: 1rem;
+        }
+        /*utilidades*/
+        
+        .w-sm-100 {
+            width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .w-sm-100 {
+                width: auto;
+            }
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .alinear-derecha {
+            justify-content: flex-end;
+        }
+        
+        .nav-gb {
+            background-color: var(--secundario);
+        }
+        
+        .navegacion-principal {
+            /* padding: 1rem; /* lo colocamos en navegacion-principal a*/
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (min-width:768px) {
+            .navegacion-principal {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .navegacion-principal a {
+            display: block;
+            text-align: center;
+            /*background-color: var(--primario); le puso color al contorno de los nav
+        /*display: inline; no hace nada
+        /* display: block; lo deja uno debajo del otro*/
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: 2rem;
+            /* tamaño de la letra*/
+            font-weight: bold;
+            /* lo coloca negrita o con fondo*/
+            padding: 1rem;
+        }
+        /* borramos todo lo siguiente porque vamos a ocupar el root, paeltas de colores*/
+        /*h1.titulo span {
+                    /* en este caso en ves de poner h1 utilizamos .titulo como clase*/
+        /*font-size: 2rem;*/
+        /* color: blue;
+                }
+
+                .titulo span {
+                    font-size: 2rem;
+                    /* vamos a clasificarlos asi(h1 span), para que se entienda que ese span es solo para ese h1 y no generico*/
+        /* color: red;
+                }*/
+        
+        .navegacion-principal a:hover {
+            background-color: var(--primario);
+            color: var(--oscuro);
+            /* se coloca oscuro cuando pasamos por el lugar*/
+        }
+        /*body {
+                background-color: yellow;
+            } /* si colocamos por fuera desde  0px se verá de color ayellow, hasta llegar a 480px*/
+        /*@media (min-width:480px) {
+                body {
+                    background-color: blue;
+                } /* a partir de los 480 px se vera blue, hasta llegar a 768 px que se vera de otro color que colocamos*/
+        /*}
+
+            @media (min-width: 768px) {
+                body {
+                    background-color: cornflowerblue;
+                }
+            }
+            */
+        
+        .hero {
+            background-image: url(../Img/hero.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 410px;
+            /*padding: 20px; lo quitamos luego de implemetnar la trasparencia porque no nos deja utilizar todo el ancho de la imagen*/
+            position: relative;
+            /*siendo padre lo agrego para luego agregar al hijo, abajo*/
+            margin-bottom: 2rem;
+        }
+        
+        .contenido-hero {
+            position: absolute;
+            background-color: rgba(0, 0, 0, .7);
+            /*Anterior*/
+            background-color: rgb(0 0 0 / 70%);
+            /* le damos color a esa parte*/
+            /*width: 2rem;
+    /*height: 2rem;eliminamos ambbos ya ue tiene que estar en toda la foto*/
+            /*bottom: 0;/* estos 4 hace que tome todo el cuadro del dibujo de color rojo*/
+            /*left: 0; /* olvidandonos de paddign de 2 rem que esta en .hero*/
+            /*top: 0;
+    right: 0; eliminamos porque hay una forma mas corta*/
+            width: 100%;
+            height: 100%;
+            /* el problema es que tenemos padding 2rem que vamos a tener que eliminar*/
+            display: flex;
+            /* de derecha  a izquierda*/
+            flex-direction: column;
+            /* y va de arriba hacia abajo*/
+            align-items: center;
+            /* lo centramos*/
+            justify-content: center;
+        }
+        
+        .contenido-hero h2,
+        .contenido-hero p {
+            color: var(--blanco);
+        }
+        /*Servicios*/
+        
+        @media (min-width: 768px) {
+            .servicios {
+                display: grid;
+                /*grid-template-columns: 300px 300px;
+        /*COMUMNA-  lo que hace es que como que lo divide en 4*/
+                /*grid-template-rows: 200px 800px;
+        /*parte sup 200px y */
+                /* para inf 800 px*/
+                /*LO DE ARRIBA ES LO MISMOD DECIR */
+                /*grid: 200px 800px/ 300px 300px;*/
+                /*sSEPARAMOS POR FRACCIONES*/
+                /* grid-template-columns: 1fr 1fr 1fr;*/
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 1rem;
+            }
+        }
+        
+        .servicio {
+            /* tenemos la nueva clase(hijo servicio)*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .servicio h3 {
+            /*dentro de ese servicio tenemos h3*/
+            color: var(--secundario);
+            font-weight: normal;
+            /* o font-weight: 400;*/
+        }
+        
+        .servicio p {
+            line-height: 2;
+            /* interlineado del parrafo, para que no este junto*/
+            text-align: center;
+            /* si queremos centramos el texcto si no*/
+        }
+        
+        .servicio .iconos {
+            /*le damos forma a los iconos*/
+            height: 15rem;
+            /*alto*/
+            width: 15rem;
+            /*ancho*/
+            background-color: var(--primario);
+            /*color*/
+            border-radius: 50%;
+            /* si tenemos un cuadrado, se hara redondo*/
+            display: flex;
+            /* flex-direction: row; /*es por defecto, si sacamos o no es lo mismo*/
+            align-items: center;
+            /*justify-content: center;*/
+            justify-content: space-evenly;
+        }
+        /*CONTACTOS*/
+        
+        .formulario {
+            background-color: var(--gris);
+            /* colocamos color a el cuadro*/
+            /*formula tener en cuanta*/
+            width: min(60rem, 100%);
+            /*utilizar el valor mas pequeño*/
+            margin: 0 auto;
+            /* para centrarlo*/
+            padding: 2rem;
+            border-radius: 1rem;
+            /* le damos un poco de bordes*/
+        }
+        
+        .formulario fieldset {
+            border: none;
+            /* le sacamos el border por default*/
+        }
+        
+        .formulario legend {
+            color: var(--primario);
+            text-transform: uppercase;
+            /*mayuscula*/
+            font-size: 2rem;
+            /* tamaño letra*/
+            text-align: center;
+            font-weight: bold;
+            /*para tener negrita*/
+            /*agregamos margen*/
+            margin-bottom: 2rem;
+        }
+        
+        @media(min-width: 768px) {
+            /*a agregamos media query*/
+            .contenedor-campos {
+                display: grid;
+                /* mas facil hacer con grid*/
+                /* grid-template-columns: 50% 50%;*/
+                /* dividimos en dos columnas*/
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto 20rem;
+                column-gap: 1.5rem;
+                /*separa un poco*/
+            }
+        }
+        
+        .campo:nth-child(3),
+        .campo:nth-child(4) {
+            grid-column: 1 / 3;
+            /* que correo vaya de 1 a la columna 3*/
+            /*grid-row: 3 / 4;*/
+            /* si queremos subir mensaje antes de correo*/
+        }
+        /*.campo:nth-child(4) {
+            grid-column: 1 / 3;
+        }*/
+        /*lo colocamos arriba ya que es lo mismo  del 1 a la 3 */
+        
+        .campo {
+            margin-bottom: 1rem;
+            /* agregamos espacio entre nombre, tele, y otros*/
+        }
+        
+        .campo label {
+            color: var(--blanco);
+            /*color a la letra*/
+            font-weight: bold;
+            /*tamaño de la letra o 700*/
+            margin-bottom: .5rem;
+            /* agregamos espacio */
+            display: block;
+            /* toma el espacio disponible*/
+        }
+        /* le damos mas espacio*/
+        
+        .campo textarea {
+            height: 18rem;
+        }
+        
+        .input-text {
+            /*background-color: red;*/
+            width: 100%;
+            /* que tome todo el espacio disponible*/
+            border: none;
+            /* le sacamos el pequeño borde sombreado que tiene*/
+            padding: 1.5rem;
+            /* se hace mas alto el input*/
+            border-radius: .5rem;
+            /* esquinas redondeadas*/
+        }
+        /*.enviar .boton {
+            width: 100%;
+        }*/
+        /*utilidades que se agregaron para el boton enviar*/
+        /*footer*/
+        
+        .footer {
+            text-align: center;
+        }
